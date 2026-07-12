@@ -29,8 +29,10 @@ I help e-commerce brands and growth-focused businesses scale profitably. I stop 
 ---
 
 
+---
+
 ### 📊 My Stats & Tech Stack
-![MACVERSE's stats](https://github-readme-stats.vercel.app/api?username=macversehq&show_icons=true&theme=radical)
+![MACVERSE's stats](https://github-readme-stats.vercel.app/api?username=macversehq&show_icons=true&theme=radical&include_all_commits=true&count_private=true)
 
 ---
 

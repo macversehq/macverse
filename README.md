@@ -28,8 +28,9 @@ I help e-commerce brands and growth-focused businesses scale profitably. I stop 
 
 ---
 
+
 ### 📊 My Stats & Tech Stack
-![MACVERSE's stats](https://github-readme-stats.vercel.app/api?username=MACVERSE&show_icons=true&theme=radical)
+![MACVERSE's stats](https://github-readme-stats.vercel.app/api?username=macversehq&show_icons=true&theme=radical)
 
 ---
 
@@ -37,7 +38,5 @@ I help e-commerce brands and growth-focused businesses scale profitably. I stop 
 | Project Name | Description | Live Link |
 | :--- | :--- | :--- |
 | **MACVERSE Hub** | Data-driven marketing architecture & growth systems. | [View Site](https://macversehq.github.io/macverse/) |
-
-*(More projects coming soon as we scale...)*
 
 ---

@@ -41,9 +41,3 @@ I help e-commerce brands and growth-focused businesses scale profitably. I stop 
 | **MACVERSE Hub** | Data-driven marketing architecture & growth systems. | [View Site](https://macversehq.github.io/macverse/) |
 
 ---
-### 🛠 Featured Projects
-| Project Name | Description | Live Link |
-| :--- | :--- | :--- |
-| **MACVERSE Hub** | Data-driven marketing architecture & growth systems. | [View Site](https://macversehq.github.io/macverse/) |
-
----

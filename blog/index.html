@@ -647,10 +647,22 @@
             .newsletter-form { flex-direction: column; }
             .newsletter-form input { min-width: 100%; }
         }
+
+        /* Reading Progress */
+           .reading-progress { 
+           position: fixed; top: 0; left: 0; 
+           height: 3px; 
+           background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple)); 
+           z-index: 10000; 
+           transition: width 0.1s ease; 
+           box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); 
+        }
+
     </style>
 </head>
 <body>
     <!-- Header -->
+     <div class="reading-progress" id="readingProgress"></div>
     <header class="header">
         <div class="header-inner">
             <a href="/" class="logo">
@@ -669,7 +681,9 @@
                 <a href="/#contact">Contact</a>
             </nav>
             <div class="header-actions">
-                <button class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
                 <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             </div>
         </div>
@@ -831,49 +845,70 @@
     </footer>
 
     <!-- Chat Widget -->
-    <button class="chat-widget" aria-label="Chat"><i class="fas fa-comment-dots"></i></button>
+    <button class="chat-widget" id="chatWidget" aria-label="Chat">
+    <i class="fas fa-comment-dots"></i>
+    </button>
 
     <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const blogCards = document.querySelectorAll('.blog-card');
-        const searchInput = document.getElementById('searchInput');
+    // ===== THEME TOGGLE =====
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlEl = document.documentElement;
+    let currentTheme = localStorage.getItem('macverse-theme') || 'dark';
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
+    htmlEl.setAttribute('data-theme', currentTheme);
+    themeIcon.className = currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
 
-                blogCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
+    themeToggle.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        htmlEl.setAttribute('data-theme', currentTheme);
+        themeIcon.className = currentTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        localStorage.setItem('macverse-theme', currentTheme);
+    });
 
-        // Search functionality
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
+    // ===== READING PROGRESS =====
+    const readingProgress = document.getElementById('readingProgress');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        readingProgress.style.width = (scrollTop / docHeight * 100) + '%';
+    });
+
+    // ===== CHAT WIDGET =====
+    document.getElementById('chatWidget').addEventListener('click', () => {
+        alert('Chat feature coming soon! Contact us at hello.macverse@gmail.com');
+    });
+
+    // ===== NEWSLETTER =====
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for subscribing! Check your inbox.');
+    });
+
+    // ===== FILTER & SEARCH (existing) =====
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const searchInput = document.getElementById('searchInput');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
             blogCards.forEach(card => {
-                const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
-                const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
-                if (title.includes(query) || excerpt.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'flex' : 'none';
             });
         });
+    });
 
-        // Newsletter
-        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for subscribing! Check your inbox for confirmation.');
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        blogCards.forEach(card => {
+            const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+            const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
+            card.style.display = (title.includes(query) || excerpt.includes(query)) ? 'flex' : 'none';
         });
-    </script>
+    });
+</script>
 </body>
 </html>

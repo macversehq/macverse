@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Complete Meta Ads Strategy for 2026: CAPI, ASC, and Creative Testing</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ============================================ */
+    /* Brand Colors & CSS Variables                 */
+    /* ============================================ */
+    :root {
+      --primary: #00B8FF;
+      --secondary: #6E5BFF;
+      --accent: #34D4FF;
+      --luxury: #7C5CFC;
+      --success: #14C38E;
+      --warning: #FFB319;
+      --danger: #FF3E6C;
+      --bg: #07111F;
+      --surface: #0C1728;
+      --card: #101C2E;
+      --text: #F8FAFC;
+      --text-secondary: #AAB7CF;
+      --border: rgba(255,255,255,.07);
+      --shadow: rgba(0,0,0,.45);
+      --gradient-1: linear-gradient(135deg, #00B8FF 0%, #6E5BFF 100%);
+      --gradient-2: linear-gradient(135deg, #34D4FF 0%, #00B8FF 100%);
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-primary: 'Inter', sans-serif;
+      --transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius: 16px;
+      --radius-sm: 8px;
+    }
+
+    [data-theme="light"] {
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --card: #F3F6FB;
+      --text: #07111F;
+      --text-secondary: #52607A;
+      --border: rgba(0,0,0,.06);
+      --shadow: rgba(0,0,0,.08);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      font-family: var(--font-primary);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background 0.3s ease, color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Scroll progress bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: var(--gradient-1);
+      z-index: 1002;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ============================================ */
+    /* Premium Glowing Header                       */
+    /* ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(7, 17, 31, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    
+    [data-theme="light"] .header {
+      background: rgba(248, 250, 252, 0.85);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    /* Logo Image Wrapper */
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      position: relative;
+      padding: 6px 0;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-1);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      background: rgba(0, 184, 255, 0.1);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* ============================================ */
+    /* Hero & Announcement Bar                     */
+    /* ============================================ */
+    .hero-section {
+      padding-top: 140px;
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 15% 30%, rgba(0, 184, 255, 0.05) 0%, transparent 45%),
+                  radial-gradient(circle at 85% 70%, rgba(110, 91, 255, 0.05) 0%, transparent 45%);
+    }
+
+    .announcement-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .announcement-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.2); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 32px;
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 100px;
+      transition: var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient-1);
+      color: white;
+      box-shadow: 0 4px 20px rgba(0, 184, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 184, 255, 0.45);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 2px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .author-byline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* ============================================ */
+    /* 3D Icon Marquee                              */
+    /* ============================================ */
+    .marquee-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 25s linear infinite;
+    }
+
+    .marquee-section:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 40px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .marquee-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--card);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .marquee-text {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============================================ */
+    /* Curiosity Autoplay Video Simulator           */
+    /* ============================================ */
+    .video-widget {
+      background: #030812;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    }
+
+    .video-header {
+      background: rgba(255,255,255,0.02);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .video-dot-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .video-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .video-dot.red { background: #FF5F56; }
+    .video-dot.yellow { background: #FFBD2E; }
+    .video-dot.green { background: #27C93F; }
+
+    .video-title-bar {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .video-body {
+      position: relative;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, #0e1b30 0%, #030812 100%);
+    }
+
+    .video-slide-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      transition: var(--transition);
+    }
+
+    .video-slide-headline {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: white;
+      max-width: 450px;
+      line-height: 1.25;
+    }
+
+    .video-slide-sub {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .video-controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .video-progress-container {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 100px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .video-progress-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: var(--primary);
+      width: 0%;
+      border-radius: 100px;
+    }
+
+    .video-controls-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .play-btn {
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .play-btn:hover {
+      color: var(--primary);
+    }
+
+    .video-caption {
+      font-size: 0.85rem;
+      color: #F8FAFC;
+      background: rgba(0,0,0,0.6);
+      padding: 6px 14px;
+      border-radius: 6px;
+      max-width: 80%;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ============================================ */
+    /* Section Blueprints & Headings                */
+    /* ============================================ */
+    .section {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .section-title span {
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* ============================================ */
+    /* The Three Strategic Pillars                  */
+    /* ============================================ */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 184, 255, 0.25);
+      box-shadow: 0 20px 45px var(--shadow);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-1);
+      transform: scaleX(0);
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(0, 184, 255, 0.08);
+      color: var(--primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+
+    .card:hover .card-icon {
+      background: var(--gradient-1);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 184, 255, 0.3);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .card-action {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .card-action i {
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover .card-action i {
+      transform: translateX(4px);
+    }
+
+    /* ============================================ */
+    /* Interactive Hook & Hold Rate Calculator      */
+    /* ============================================ */
+    .calculator-widget {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .calc-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .calc-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .calc-input {
+      padding: 14px 18px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: var(--font-primary);
+      transition: var(--transition);
+    }
+
+    .calc-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 184, 255, 0.15);
+    }
+
+    .calc-results {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .calc-metric-output {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .calc-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calc-val {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .calc-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .calc-diagnosis {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      transition: var(--transition);
+    }
+
+    /* ============================================ */
+    /* Step-by-Step Architecture Timeline          */
+    /* ============================================ */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+      border-left: 2px solid var(--border);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 48px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -42px;
+      top: 4px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 4px solid var(--bg);
+      box-shadow: 0 0 0 3px rgba(0, 184, 255, 0.15);
+      transition: var(--transition);
+    }
+
+    .timeline-item:hover::before {
+      background: var(--secondary);
+      box-shadow: 0 0 0 5px rgba(110, 91, 255, 0.25);
+    }
+
+    .timeline-step {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .timeline-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ============================================ */
+    /* Schema-Ready FAQ Accordion                   */
+    /* ============================================ */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: rgba(0, 184, 255, 0.2);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-primary);
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: left;
+      color: var(--text);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      position: relative;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .faq-icon::before, .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--primary);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-icon::before {
+      width: 2px;
+      height: 12px;
+      top: 6px;
+      left: 11px;
+    }
+
+    .faq-icon::after {
+      width: 12px;
+      height: 2px;
+      top: 11px;
+      left: 6px;
+    }
+
+    .faq-item.active .faq-icon::before {
+      transform: rotate(90deg);
+    }
+
+    .faq-item.active .faq-icon::after {
+      transform: rotate(180deg);
+      opacity: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+      padding: 0 24px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 24px 24px;
+    }
+
+    .faq-answer p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* ============================================ */
+    /* CTA Banner Section                           */
+    /* ============================================ */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(0, 184, 255, 0.08) 0%, rgba(110, 91, 255, 0.08) 100%);
+      border: 1px solid rgba(0, 184, 255, 0.15);
+      border-radius: var(--radius);
+      padding: 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .cta-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    /* ============================================ */
+    /* Super-Premium Footer                         */
+    /* ============================================ */
+    .footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 80px 0 40px;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-brand img {
+      height: 48px;
+      width: auto;
+      align-self: flex-start;
+      object-fit: contain;
+    }
+
+    .footer-brand-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .social-icon:hover {
+      background: var(--gradient-1);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,184,255,0.25);
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-link {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+      padding-left: 4px;
+    }
+
+    .footer-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-copyright {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal-link {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-legal-link:hover {
+      color: var(--primary);
+    }
+
+    /* ============================================ */
+    /* Immersive Modal System                       */
+    /* ============================================ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 17, 31, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      padding: 24px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-container {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 800px;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(40px) scale(0.95);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 25px 50px var(--shadow);
+    }
+
+    .modal-overlay.active .modal-container {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 10;
+    }
+
+    .modal-close:hover {
+      background: var(--danger);
+      color: white;
+      border-color: var(--danger);
+    }
+
+    .modal-content {
+      padding: 48px;
+    }
+
+    .modal-body h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin: 32px 0 16px;
+      color: white;
+    }
+
+    .modal-body p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .modal-body ul {
+      margin-bottom: 24px;
+      padding-left: 20px;
+    }
+
+    .modal-body li {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .premium-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 0.95rem;
+    }
+
+    .premium-table th, .premium-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .premium-table th {
+      background: rgba(255,255,255,0.02);
+      font-weight: 700;
+      color: white;
+    }
+
+    /* ============================================ */
+    /* Exit Intent Popup (Light Minimalist design)  */
+    /* ============================================ */
+    .exit-popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 17, 31, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 5000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .exit-popup-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .exit-popup {
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 48px;
+      max-width: 480px;
+      width: calc(100% - 48px);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+      position: relative;
+      transform: translateY(20px) scale(0.96);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .exit-popup-overlay.active .exit-popup {
+      transform: translateY(0) scale(1);
+    }
+
+    .exit-popup-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .exit-popup-close:hover {
+      color: #0f172a;
+      background: #f1f5f9;
+    }
+
+    .exit-popup-heading {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .exit-popup-body {
+      font-family: var(--font-primary);
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .exit-popup-input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      font-family: var(--font-primary);
+      font-size: 1rem;
+      color: #1e293b;
+      background: #f8fafc;
+      transition: all 0.2s ease;
+      margin-bottom: 16px;
+    }
+
+    .exit-popup-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(0, 184, 255, 0.15);
+    }
+
+    .exit-popup-btn {
+      display: block;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 12px;
+      background: var(--gradient-1);
+      color: #ffffff;
+      font-family: var(--font-primary);
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 184, 255, 0.3);
+    }
+
+    .exit-popup-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 184, 255, 0.45);
+    }
+
+    /* ============================================ */
+    /* Mobile Responsive Layout Adaptation          */
+    /* ============================================ */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-desktop {
+        display: none;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-legal-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Top Fixed Premium Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Dynamic Toggling Logo -->
+        <a href="#" class="logo">
+          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png" alt="MetaAds 2026" id="headerLogo">
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="nav-desktop">
+          <span class="nav-link active" onclick="scrollToSection('hero')">Strategy Home</span>
+          <span class="nav-link" onclick="openStrategyModal('capi')">Pillar 1: CAPI</span>
+          <span class="nav-link" onclick="openStrategyModal('asc')">Pillar 2: ASC</span>
+          <span class="nav-link" onclick="openStrategyModal('testing')">Pillar 3: Testing</span>
+          <span class="nav-link" onclick="scrollToSection('calculator')">ROI Calculator</span>
+        </nav>
+
+        <!-- Right Side Utility Button and Toggle Theme -->
+        <div class="header-actions">
+          <div class="theme-toggle" onclick="toggleTheme()" title="Switch Light/Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </div>
+          <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;" onclick="openStrategyModal('architecture')">
+            Audit Account
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section & Video Playback Simulator -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="announcement-bar">
+            <span class="announcement-dot"></span>
+            <span>Meta Ads Strategy Updated: July 2026</span>
+          </div>
+          <h1 class="hero-title">The Complete <span>Meta Ads Strategy for 2026</span></h1>
+          <p class="hero-desc">Bypass browser blocking scripts, exploit autonomous Advantage+ retrieval systems, and scale your DTC brand with an elite scientific creative testing loop.</p>
+          
+          <div class="hero-buttons">
+            <a href="https://raw.githubusercontent.com/macversehq/macverse/main/blog-images/2026_Meta_Ads_Architecture.pdf" class="btn btn-primary" target="_blank" download>
+              <i class="fa-solid fa-cloud-arrow-down"></i> Download Free Strategy Slides
+            </a>
+            <button class="btn btn-secondary" onclick="scrollToSection('calculator')">Run Creative Metrics</button>
+          </div>
+
+          <div class="author-byline">
+            <div class="author-avatar">M26</div>
+            <div>
+              <strong>Written by Elite Media Buyer</strong><br>
+              <span>Managing $10M+ in Meta ad spend for DTC brands</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulated Interactive Video Widget -->
+        <div class="hero-right">
+          <div class="video-widget">
+            <div class="video-header">
+              <div class="video-dot-group">
+                <span class="video-dot red"></span>
+                <span class="video-dot yellow"></span>
+                <span class="video-dot green"></span>
+              </div>
+              <span class="video-title-bar">90-Sec Strategy Briefing (Autoplay Simulation)</span>
+              <i class="fa-solid fa-volume-high" style="color: white; font-size: 0.85rem;"></i>
+            </div>
+            <div class="video-body">
+              <div class="video-slide-content" id="videoSlide">
+                <div class="video-slide-headline" id="slideHeadline">Why is your ROAS bouncing like a Yo-Yo?</div>
+                <div class="video-slide-sub" id="slideSub">Traditional wide targeting is officially dead in 2026.</div>
+              </div>
+              
+              <div class="video-controls">
+                <div class="video-progress-container" onclick="seekVideo(event)">
+                  <div class="video-progress-fill" id="videoProgress"></div>
+                </div>
+                <div class="video-controls-buttons">
+                  <i class="fa-solid fa-pause play-btn" id="videoPlayPause" onclick="toggleVideoPlayback()"></i>
+                  <div class="video-caption" id="videoCaption">E-commerce founders, let's be real. It's 2026, and broad targeting isn't saving rising CPAs.</div>
+                  <i class="fa-solid fa-expand"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Brand Trust Icon Marquee -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        <div class="marquee-icon"><i class="fa-solid fa-check"></i></div>
+        <span class="marquee-text">Server-Side Signals (CAPI)</span>
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-icon"><i class="fa-solid fa-robot"></i></div>
+        <span class="marquee-text">Andromeda Optimization Engine</span>
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-icon"><i class="fa-solid fa-flask"></i></div>
+        <span class="marquee-text">Scientific 3:2:1 Testing</span>
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <span class="marquee-text">First-Party Data Sovereignty</span>
+      </div>
+      <!-- Duplicate for infinite effect -->
+      <div class="marquee-item">
+        <div class="marquee-icon"><i class="fa-solid fa-check"></i></div>
+        <span class="marquee-text">Server-Side Signals (CAPI)</span>
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-icon"><i class="fa-solid fa-robot"></i></div>
+        <span class="marquee-text">Andromeda Optimization Engine</span>
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-icon"><i class="fa-solid fa-flask"></i></div>
+        <span class="marquee-text">Scientific 3:2:1 Testing</span>
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <span class="marquee-text">First-Party Data Sovereignty</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Strategy Pillars Grid -->
+  <section class="section" id="pillars">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">The Strategy</span>
+        <h2 class="section-title">The Three <span>Strategic Pillars</span> of 2026</h2>
+        <p class="section-subtitle">A balanced, highly-automated media buying infrastructure designed to maximize signal match rate and scaling power.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Pillar 1 Card -->
+        <div class="card" onclick="openStrategyModal('capi')">
+          <div class="card-icon"><i class="fa-solid fa-plug"></i></div>
+          <h3 class="card-title">1. Conversions API (CAPI)</h3>
+          <p class="card-desc">Achieve 100% signal sovereignty by feeding first-party conversions directly server-to-server. Bypass ad-blockers and iOS privacy frameworks entirely.</p>
+          <span class="card-action">Deep Dive <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+
+        <!-- Pillar 2 Card -->
+        <div class="card" onclick="openStrategyModal('asc')">
+          <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3 class="card-title">2. Advantage+ Sales (ASC)</h3>
+          <p class="card-desc">Deploy Meta's updated Andromeda retrieval systems. Force pure acquisition using robust exclusion controls and customer budget caps.</p>
+          <span class="card-action">Deep Dive <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+
+        <!-- Pillar 3 Card -->
+        <div class="card" onclick="openStrategyModal('testing')">
+          <div class="card-icon"><i class="fa-solid fa-vial"></i></div>
+          <h3 class="card-title">3. Scientific 3:2:1 Sandbox</h3>
+          <p class="card-desc">A rigorous dynamic system isolating variables to find winning creatives. Track precise Hook and Hold metrics before scale.</p>
+          <span class="card-action">Deep Dive <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Hook & Hold Rate Calculator Widget -->
+  <section class="section" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Ad Diagnostics Tool</span>
+        <h2 class="section-title">Hook & Hold Rate <span>Creative Calculator</span></h2>
+        <p class="section-subtitle">Instantly analyze and diagnose your ad creative performance. Insert your raw video metrics from Ads Manager.</p>
+      </div>
+
+      <div class="calculator-widget">
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <div class="calc-group">
+              <label for="impressions">Total Impressions</label>
+              <input type="number" id="impressions" class="calc-input" value="100000">
+            </div>
+            <div class="calc-group">
+              <label for="views">3-Second Video Views</label>
+              <input type="number" id="views" class="calc-input" value="30000">
+            </div>
+            <div class="calc-group">
+              <label for="thruplays">ThruPlays (15-Sec / Full Views)</label>
+              <input type="number" id="thruplays" class="calc-input" value="6000">
+            </div>
+            <button class="btn btn-primary" onclick="calculateMetrics()">Diagnose Ad Creative</button>
+          </div>
+
+          <div class="calc-results">
+            <div class="calc-metric-output">
+              <div class="calc-box">
+                <span class="calc-val" id="hookRateVal">30.0%</span>
+                <span class="calc-label">Hook Rate (Opener)</span>
+              </div>
+              <div class="calc-box">
+                <span class="calc-val" id="holdRateVal">20.0%</span>
+                <span class="calc-label">Hold Rate (Narrative)</span>
+              </div>
+            </div>
+            <div class="calc-diagnosis" id="calcDiagnosis" style="background: rgba(20, 195, 142, 0.1); color: var(--success);">
+              Stable: Your creative opener stopped the scroll and is performing well. Ready to scale!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-Step Architecture Setup Timeline -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Execution Blueprint</span>
+        <h2 class="section-title">Step-by-Step <span>Campaign Setup</span></h2>
+        <p class="section-subtitle">How to structure your Meta Ad Account to run autonomously with high conversion efficiency.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-step">Step 1</div>
+          <h3 class="timeline-title">Pixel and CAPI Setup (The Foundation)</h3>
+          <p class="timeline-desc">Establish first-party, server-to-server tracking. Push Purchase Event Match Quality above 8.0 by sending email, phone, and IP parameters.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-step">Step 2</div>
+          <h3 class="timeline-title">Design the Creative Testing Sandbox (Manual Campaign)</h3>
+          <p class="timeline-desc">Build a standard, manual (non-ASC) campaign using Campaign Budget Optimization (CBO) and Broad Targeting. Activate Dynamic Creative to run the 3:2:1 matrix.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-step">Step 3</div>
+          <h3 class="timeline-title">Launch the Scaling Engine (Advantage+ Shopping Campaign)</h3>
+          <p class="timeline-desc">Consolidate scaling budget inside ASC. Set a strict customer budget cap of 5-10% under Controls to target pure acquisition prospects.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-step">Step 4</div>
+          <h3 class="timeline-title">Post ID Graduation (Creative Migration)</h3>
+          <p class="timeline-desc">Locate the winning dynamic creative's Post ID from Page Posts manager. Insert the exact Post ID directly to ASC to keep all social proof intact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema-Ready FAQ Accordion -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Frequently <span>Asked Questions</span></h2>
+        <p class="section-subtitle">Quick answers to common strategic bottlenecks.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-question">What is a good Event Match Quality (EMQ) score for Purchase events?<span class="faq-icon"></span></button>
+          <div class="faq-answer">
+            <p>An EMQ score of 8.0 or higher is considered "Excellent." Pushing scores in this range ensures Meta's server correctly attributes conversion events back to specific real user profiles, dramatically lowering CPAs.</p>
+          </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-question">Should ASC completely replace manual campaigns in my account?<span class="faq-icon"></span></button>
+          <div class="faq-answer">
+            <p>No. While ASC should handle the majority of your scaling budget (typically 70% to 80%), you still need manual campaigns to run your Creative Testing Sandbox and isolate creative variables cleanly.</p>
+          </div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-question">What's the difference between Hook Rate and Hold Rate?<span class="faq-icon"></span></button>
+          <div class="faq-answer">
+            <p>Hook Rate measures whether your first 3 seconds stopped the scroll (3-second views ÷ impressions). Hold Rate measures whether viewers kept watching after that (ThruPlays ÷ 3-second views). A creative needs both to work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="section" style="border-bottom: none;">
+    <div class="container">
+      <div class="cta-banner">
+        <h2 class="cta-title">Ready to Audit Your Meta Ads Foundation?</h2>
+        <p class="cta-desc">Let our elite media buying team examine your server signals, diagnose your hook rates, and design a customized scaling blueprint.</p>
+        <button class="btn btn-primary" onclick="openStrategyModal('architecture')">Book Your Free 30-Min Audit Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Super-Premium Responsive Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png" alt="MetaAds 2026" id="footerLogo">
+          <p class="footer-brand-desc">Helping ambitious DTC brands establish high-signal data pipelines, build programmatic creative sandboxes, and scale profitably with Meta Ads AI.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Strategy Quicklinks -->
+        <div>
+          <h4 class="footer-col-title">Strategic Pillars</h4>
+          <div class="footer-links">
+            <span class="footer-link" onclick="openStrategyModal('capi')">1. Conversions API Setup</span>
+            <span class="footer-link" onclick="openStrategyModal('asc')">2. Advantage+ Scale</span>
+            <span class="footer-link" onclick="openStrategyModal('testing')">3. 3:2:1 Testing Matrix</span>
+            <span class="footer-link" onclick="openStrategyModal('architecture')">4. Campaign Setup</span>
+          </div>
+        </div>
+
+        <!-- Resources Link list -->
+        <div>
+          <h4 class="footer-col-title">Resources</h4>
+          <div class="footer-links">
+            <a href="https://raw.githubusercontent.com/macversehq/macverse/main/blog-images/2026_Meta_Ads_Architecture.pdf" class="footer-link" target="_blank" download>Masterclass PDF Slides</a>
+            <span class="footer-link" onclick="scrollToSection('calculator')">Creative Calculator</span>
+            <span class="footer-link" onclick="scrollToSection('hero')">Strategy Autoplay Sim</span>
+            <span class="footer-link" onclick="openStrategyModal('architecture')">Request Account Audit</span>
+          </div>
+        </div>
+
+        <!-- Quick Subscription/Download Lead Magnet in Footer -->
+        <div class="footer-cta">
+          <h4 class="footer-col-title">Download Masterclass Slides</h4>
+          <p class="footer-brand-desc">Get direct access to our complete blueprint PDF to customize your own Meta Ads structure.</p>
+          <a href="https://raw.githubusercontent.com/macversehq/macverse/main/blog-images/2026_Meta_Ads_Architecture.pdf" class="btn btn-primary" style="padding: 12px 24px; font-size: 0.9rem;" target="_blank" download>
+            <i class="fa-solid fa-file-pdf"></i> Download PDF (Free)
+          </a>
+        </div>
+      </div>
+
+      <!-- Copyright and bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 MetaAds Strategy Portal. Designed for Elite Media Buyers & DTC Founders.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#" class="footer-legal-link">Privacy Policy</a>
+          <a href="#" class="footer-legal-link">Terms of Service</a>
+          <a href="#" class="footer-legal-link">GDPR Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Immersive Modal Overlay System -->
+  <div class="modal-overlay" id="strategyModal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-content" id="modalDynamicBody">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Exit Intent Popup Overlay -->
+  <div class="exit-popup-overlay" id="exitPopupOverlay">
+    <div class="exit-popup">
+      <button class="exit-popup-close" onclick="closeExitPopup()"><i class="fa-solid fa-xmark"></i></button>
+      <h3 class="exit-popup-heading">Wait! Don't Leave Your Meta Ads on Autopilot.</h3>
+      <p class="exit-popup-body">Download our free <strong>2026 Meta Ads Campaign Architecture Slides</strong> before you go. Ensure your ad account is optimized against rising CPAs.</p>
+      <input type="email" class="exit-popup-input" placeholder="Enter your business email" id="exitEmailInput">
+      <!-- Fixed to directly execute download upon submitting email -->
+      <button class="exit-popup-btn" onclick="submitExitPopup()">Get Free Architecture Slides &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript System Mechanics -->
+  <script>
+    // ============================================
+    // State & Simulated Video Data
+    // ============================================
+    const videoSlides = [
+      {
+        headline: "Why is your ROAS bouncing like a Yo-Yo?",
+        sub: "Traditional wide targeting is officially dead in 2026.",
+        caption: "E-commerce founders, let's be real. It's 2026, and broad targeting isn't saving rising CPAs."
+      },
+      {
+        headline: "The Server-Side Connection",
+        sub: "CAPI bypasses browser tracking blocks entirely.",
+        caption: "Without Meta Conversions API (CAPI), you are losing 20-30% of your real-time customer signals."
+      },
+      {
+        headline: "Consolidated Advantage+ Scale",
+        sub: "Feed Meta's AI engine with systematic winners.",
+        caption: "Instead of dozens of ad sets, consolidate budget into ASC and feed it proven creatives."
+      },
+      {
+        headline: "The 3:2:1 Testing Sandbox",
+        sub: "Graduate validated Post ID winners with social proof.",
+        caption: "We test 3 hooks and 2 bodies in our Sandbox, then move Post IDs to protect CPMs."
+      }
+    ];
+
+    let currentSlideIdx = 0;
+    let videoPlaying = true;
+    let videoProgressPct = 0;
+    let videoInterval;
+    let hasShownExitPopup = false;
+
+    // ============================================
+    // Simulated Autoplay Video Engine
+    // ============================================
+    function startVideoSimulator() {
+      videoInterval = setInterval(() => {
+        if (!videoPlaying) return;
+
+        videoProgressPct += 1.5;
+        if (videoProgressPct >= 100) {
+          videoProgressPct = 0;
+          currentSlideIdx = (currentSlideIdx + 1) % videoSlides.length;
+          updateVideoSlide();
+        }
+        document.getElementById('videoProgress').style.width = videoProgressPct + '%';
+      }, 150);
+    }
+
+    function updateVideoSlide() {
+      const slide = videoSlides[currentSlideIdx];
+      document.getElementById('slideHeadline').textContent = slide.headline;
+      document.getElementById('slideSub').textContent = slide.sub;
+      document.getElementById('videoCaption').textContent = slide.caption;
+    }
+
+    function toggleVideoPlayback() {
+      videoPlaying = !videoPlaying;
+      const btn = document.getElementById('videoPlayPause');
+      if (videoPlaying) {
+        btn.className = 'fa-solid fa-pause play-btn';
+      } else {
+        btn.className = 'fa-solid fa-play play-btn';
+      }
+    }
+
+    function seekVideo(event) {
+      const container = event.currentTarget;
+      const rect = container.getBoundingClientRect();
+      const clickX = event.clientX - rect.left;
+      const pct = (clickX / rect.width) * 100;
+      videoProgressPct = pct;
+      
+      currentSlideIdx = Math.floor((pct / 100) * videoSlides.length) % videoSlides.length;
+      updateVideoSlide();
+      document.getElementById('videoProgress').style.width = pct + '%';
+    }
+
+    // ============================================
+    // Hook & Hold Rate Calculator Tool
+    // ============================================
+    function calculateMetrics() {
+      const impressions = parseFloat(document.getElementById('impressions').value) || 0;
+      const views = parseFloat(document.getElementById('views').value) || 0;
+      const thruplays = parseFloat(document.getElementById('thruplays').value) || 0;
+
+      if (impressions <= 0 || views <= 0) {
+        alert("Please enter values greater than zero.");
+        return;
+      }
+
+      const hookRate = (views / impressions) * 100;
+      const holdRate = (thruplays / views) * 100;
+
+      document.getElementById('hookRateVal').textContent = hookRate.toFixed(1) + '%';
+      document.getElementById('holdRateVal').textContent = holdRate.toFixed(1) + '%';
+
+      const diagnosisBox = document.getElementById('calcDiagnosis');
+
+      if (hookRate < 25) {
+        diagnosisBox.style.background = 'rgba(255, 62, 108, 0.1)';
+        diagnosisBox.style.color = 'var(--danger)';
+        diagnosisBox.textContent = '🔴 Critical: Your Hook Rate is below the 25% benchmark. Redesign the first 3 seconds of your creative opener immediately.';
+      } else if (holdRate < 15) {
+        diagnosisBox.style.background = 'rgba(255, 179, 25, 0.1)';
+        diagnosisBox.style.color = 'var(--warning)';
+        diagnosisBox.textContent = '🟡 Warning: Scroll-stopper succeeded, but your Hold Rate is under 15%. Your narrative/story format is not keeping attention.';
+      } else {
+        diagnosisBox.style.background = 'rgba(20, 195, 142, 0.1)';
+        diagnosisBox.style.color = 'var(--success)';
+        diagnosisBox.textContent = '🟢 Elite: Outstanding performance (Hook > 25% & Hold > 15%). Graduate this Post ID directly to your Advantage+ scaling campaign!';
+      }
+    }
+
+    // ============================================
+    // Strategy Modal Contents (EEAT & Technical Specs)
+    // ============================================
+    const strategyContent = {
+      capi: `
+        <h2>Pillar 1: Conversions API (CAPI) Architecture</h2>
+        <p>Meta Conversions API is a robust server-side signal network establishing first-party data sovereignty. It bypasses web browser constraints, cookies blocking networks, and client-side code breaks entirely.</p>
+        
+        <h2>How to Leverage Event Match Quality (EMQ) Scores</h2>
+        <p>To maximize EMQ, transmit these hashed user parameter identifiers directly on every server event:</p>
+        <ul>
+          <li><strong>Hashed Email:</strong> Instantly adds up to <strong>+4 points</strong> to your EMQ.</li>
+          <li><strong>Hashed Phone:</strong> Adds up to <strong>+3 points</strong> to your match score.</li>
+          <li><strong>IP Address & User Agent:</strong> Bypasses browser blocking consistency.</li>
+        </ul>
+        <p><em>Industry Benchmark:</em> Brands that utilize deduplicated CAPI networks with an EMQ score exceeding <strong>8.0 on Purchase events</strong> see a <strong>15% to 25% reduction in CPA</strong>.</p>
+      `,
+      asc: `
+        <h2>Pillar 2: Advantage+ Sales Campaign (ASC) Scaling</h2>
+        <p>Advantage+ Shopping campaigns represent the pinnacle of machine-learning-driven media buying. Instead of managing dozens of manually segmented interest ad sets, ASC utilizes a consolidated campaign flow.</p>
+        
+        <h2>The "ASC Trap" and Correction Controls</h2>
+        <p>Because Meta seeks the lowest hanging fruit, ASC will naturally over-target warm existing customers instead of finding cold buyers. Bypass this by using the following configuration controls:</p>
+        <ul>
+          <li><strong>CRM Exclusion:</strong> Export your active customer records and upload them directly into Ad Account Settings as an existing audience group.</li>
+          <li><strong>Set Hard Controls:</strong> Ensure your exclusion is mapped inside <strong>Controls</strong> (which acts as a strict algorithm rule) rather than Suggestions (which ASC can override).</li>
+          <li><strong>Customer Budget Cap:</strong> Enforce a strict customer budget cap of <strong>5% to 10% max</strong> to preserve budget for top-of-funnel conversion.</li>
+        </ul>
+        <p>Meta's newly introduced <strong>Andromeda retrieval system</strong> has reduced the weekly learning exit requirement from 50 weekly conversions down to <strong>25 conversions</strong>.</p>
+      `,
+      testing: `
+        <h2>Pillar 3: The 3:2:1 Dynamic Testing Sandbox</h2>
+        <p>When targeting is consolidated, the primary lever you have for reducing CPA is your actual visual ad creative. Running unproven creative assets inside ASC is highly inefficient. Establish a dedicated Sandbox.</p>
+        
+        <h2>The 3:2:1 Setup</h2>
+        <p>Utilize Dynamic Creative Tests (DCT) using the following ratio:</p>
+        <ul>
+          <li><strong>3 Hooks:</strong> Three radically different 3-second openers (e.g., Problem-focused, Aesthetic-focused, Social Proof-focused).</li>
+          <li><strong>2 Bodies:</strong> Two structural bodies/formats (e.g., Founder story, UGC reaction, Carousel presentation).</li>
+          <li><strong>1 CTA/Offer:</strong> Keep the closing discount or offer exactly constant to isolate creative variables.</li>
+        </ul>
+        <p>Analyze performance metrics upstream: <strong>Hook Rate (>25%)</strong> and <strong>Hold Rate (>15%)</strong>. Once an elite asset wins, export its specific <strong>Post ID</strong> and graduate it directly to ASC to keep your comments, likes, and social proof fully intact!</p>
+      `,
+      architecture: `
+        <h2>Step-by-Step Meta Ads Account Architecture</h2>
+        <p>Use this unified, highly optimized account model designed to balance real-time machine-learning automation with human-in-the-loop (HITL) control:</p>
+        
+        <table class="premium-table">
+          <thead>
+            <tr>
+              <th>Campaign Type</th>
+              <th>Goal / Purpose</th>
+              <th>Structure Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Creative Sandbox (Manual)</strong></td>
+              <td>Isolate & validate creative winning angles.</td>
+              <td>Dynamic Creative on (broad settings), testing 3:2:1 models.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Scaling Campaign (ASC)</strong></td>
+              <td>Aggressive ROAS & scale acquisition.</td>
+              <td>Consolidated ASC flow, budget caps configured under Controls.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Catalog DPA (Optional)</strong></td>
+              <td>Bottom-of-funnel dynamic remarketing.</td>
+              <td>Connected raw product catalog with personalized feeds.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Autonomous Bidding Scaling Rules</h2>
+        <ul>
+          <li><strong>Slow Budget Scaling:</strong> Scale ASC budgets by <strong>15-20% every 48-72 hours</strong> to prevent triggering learning restarts.</li>
+          <li><strong>Scaling via Duplication:</strong> For rapid budget scaling, duplicate your campaigns with larger budgets to bypass learning-phase bidding resets entirely.</li>
+        </ul>
+      `
+    };
+
+    function openStrategyModal(pillarKey) {
+      const modal = document.getElementById('strategyModal');
+      const body = document.getElementById('modalDynamicBody');
+      body.innerHTML = strategyContent[pillarKey];
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('strategyModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ============================================
+    // Exit Intent Popup Mechanics
+    // ============================================
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY < 20 && !hasShownExitPopup) {
+        openExitPopup();
+      }
+    });
+
+    function openExitPopup() {
+      document.getElementById('exitPopupOverlay').classList.add('active');
+      hasShownExitPopup = true;
+    }
+
+    function closeExitPopup() {
+      document.getElementById('exitPopupOverlay').classList.remove('active');
+    }
+
+    function submitExitPopup() {
+      const email = document.getElementById('exitEmailInput').value;
+      if (!email || !email.includes('@')) {
+        alert("Please enter a valid business email address.");
+        return;
+      }
+      
+      // Close the popup and open the raw PDF download in a new tab
+      closeExitPopup();
+      window.open("https://raw.githubusercontent.com/macversehq/macverse/main/blog-images/2026_Meta_Ads_Architecture.pdf", "_blank");
+      alert("Success! Your free Meta Ads 2026 Campaign Architecture Slides PDF is downloading now!");
+    }
+
+    // ============================================
+    // Theme Switcher & Page Interactions
+    // ============================================
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const toggleIcon = document.querySelector('.theme-toggle i');
+      const headerLogo = document.getElementById('headerLogo');
+      const footerLogo = document.getElementById('footerLogo');
+      
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        toggleIcon.className = 'fa-solid fa-sun';
+        // Swap to the black logo in light mode
+        headerLogo.src = 'https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-black.png';
+        footerLogo.src = 'https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-black.png';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggleIcon.className = 'fa-solid fa-moon';
+        // Swap to the gradient logo in dark mode
+        headerLogo.src = 'https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png';
+        footerLogo.src = 'https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png';
+      }
+    }
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // FAQ Accordion Trigger
+    function toggleFaq(element) {
+      const isActive = element.classList.contains('active');
+      
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      if (!isActive) {
+        element.classList.add('active');
+      }
+    }
+
+    // Scroll Progress bar tracking
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // Close modal on click outside container
+    document.getElementById('strategyModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    window.onload = () => {
+      startVideoSimulator();
+      calculateMetrics();
+    };
+  </script>
+</body>
+</html>

@@ -2023,10 +2023,26 @@
       if (e.target === this) closeModal();
     });
 
+    // Custom function to make the "View Fullscreen" button work perfectly
+    function triggerFullscreen() {
+      const video = document.getElementById('realVideo');
+      if (video) {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitEnterFullscreen) { /* Safari / iOS Video Support */
+          video.webkitEnterFullscreen();
+        } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE/Edge */
+          video.msRequestFullscreen();
+        }
+      }
+    }
+
     window.onload = () => {
       startVideoSimulator();
       calculateMetrics();
-    };
+    };    
   </script>
 </body>
 </html>

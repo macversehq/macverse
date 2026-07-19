@@ -2177,17 +2177,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <!-- *** এখানে আপনার ড্যাশবোর্ডটি বসানো হয়েছে *** -->
-          
-          <div class="dashboard-preview" style="background: #101620; padding: 25px; border-radius: 20px; border: 1px solid #2a3547; box-shadow: none;">
-          <h3 style="font-size: 1.1rem; margin-bottom: 20px; color: #ffffff;">Live Performance</h3>
-          <div style="display: flex; align-items: center; gap: 15px;">
-        <!-- সার্কেল: সাইটের থিম অনুযায়ী কালার -->
-        <div id="growth-percentage" style="width: 45px; height: 45px; border: 4px solid #20b2aa; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; color: #ffffff;">85%</div>
-        <!-- টেক্সট: সাদা রঙের জন্য -->
-        <p style="font-size: 0.95rem; font-weight: 500; color: #a0aec0; margin: 0;">Growth Strategy Impact</p>
-              </div>
-            </div>
-          <!-- *** ড্যাশবোর্ডের শেষ *** -->
+          <!-- *** ১২টি মেট্রিক্সের ড্যাশবোর্ড (৩x৪ গ্রিড) *** -->
+<div class="dashboard-preview" style="background: #101620; padding: 25px; border-radius: 20px; border: 1px solid #2a3547; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+  
+  <!-- প্রতিটি কার্ডের আইডি নিচে দেওয়া হলো -->
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="total-leads" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Total Leads</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="conversion-rate" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Conversion Rate</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="growth-impact" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Growth Impact</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="active-campaigns" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Active Campaigns</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="cpa-usd" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">CPA (USD)</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="mrr-usd" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">MRR (USD)</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="satisfaction-score" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Satisfaction Score</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="project-completion" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Project Completion</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="website-traffic" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Website Traffic</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="retention-rate" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Retention Rate</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="cac-usd" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">CAC (USD)</div></div>
+  <div style="padding: 15px; border-radius: 12px; border: 1px solid #2a3547;"><div id="response-time" style="font-size: 1.1rem; font-weight: bold; color: #20b2aa; margin-bottom: 5px;">--</div><div style="font-size: 0.75rem; color: #a0aec0;">Avg Response Time</div></div>
+</div>
+</div>
+<!-- *** ড্যাশবোর্ডের শেষ *** -->
           
         </div>
       </div>
@@ -3427,11 +3435,14 @@ loading="lazy">
 <!-- ড্যাশবোর্ড আপডেট লজিক -->
 <script>
   fetch('https://script.google.com/macros/s/AKfycbxYItfF2wAEEY7dfQ8QhUMq9XOm8jt4K-D1ZtNC2xO9fnV9HbQbyoyX05N0m9n-Oo0d/exec')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("growth-percentage").innerText = data + "%";
-    })
-    .catch(error => console.error('Error:', error));
+    .then(response => response.json())
+  .then(data => {
+    const ids = ["total-leads", "conversion-rate", "growth-impact", "active-campaigns", "cpa-usd", "mrr-usd", "satisfaction-score", "project-completion", "website-traffic", "retention-rate", "cac-usd", "response-time"];
+    ids.forEach((id, index) => {
+      document.getElementById(id).innerText = data[index];
+    });
+  })
+  .catch(error => console.error('Error:', error));
 </script>
 <!-- ==================== END GOOGLE SCRIPT INTEGRATION ==================== -->
 

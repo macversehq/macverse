@@ -1343,36 +1343,37 @@
 
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Top Fixed Premium Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <!-- Dynamic Toggling Logo -->
-        <a href="#" class="logo">
-          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png" alt="MetaAds 2026" id="headerLogo">
-        </a>
+  <!-- Top Fixed Premium Header (Optimized for Blog Subpage) -->
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <!-- Fixed Logo Link to safely return back to Vercel Home Page -->
+      <a href="/" class="logo" style="display: flex; align-items: center;">
+        <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png" alt="MetaAds 2026" id="headerLogo">
+      </a>
 
-        <!-- Desktop Navigation Links -->
-        <nav class="nav-desktop">
-          <span class="nav-link active" onclick="scrollToSection('hero')">Strategy Home</span>
-          <span class="nav-link" onclick="openStrategyModal('capi')">Pillar 1: CAPI</span>
-          <span class="nav-link" onclick="openStrategyModal('asc')">Pillar 2: ASC</span>
-          <span class="nav-link" onclick="openStrategyModal('testing')">Pillar 3: Testing</span>
-          <span class="nav-link" onclick="scrollToSection('calculator')">ROI Calculator</span>
-        </nav>
+      <!-- Desktop Navigation Links (Redirecting safely to Home Page Sections & Modals) -->
+      <nav class="nav-desktop">
+        <a href="/" class="nav-link" style="text-decoration: none;">Strategy Home</a>
+        <a href="/#capi" class="nav-link" style="text-decoration: none;">Pillar 1: CAPI</a>
+        <a href="/#asc" class="nav-link" style="text-decoration: none;">Pillar 2: ASC</a>
+        <a href="/#testing" class="nav-link" style="text-decoration: none;">Pillar 3: Testing</a>
+        <a href="/#calculator" class="nav-link" style="text-decoration: none;">ROI Calculator</a>
+      </nav>
 
-        <!-- Right Side Utility Button and Toggle Theme -->
-        <div class="header-actions">
-          <div class="theme-toggle" onclick="toggleTheme()" title="Switch Light/Dark Mode">
-            <i class="fa-solid fa-moon"></i>
-          </div>
-          <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;" onclick="openStrategyModal('architecture')">
-            Audit Account
-          </button>
+      <!-- Right Side Utility Button and Toggle Theme -->
+      <div class="header-actions">
+        <div class="theme-toggle" onclick="toggleTheme()" title="Switch Light/Dark Mode" style="cursor: pointer;">
+          <i class="fa-solid fa-moon"></i>
         </div>
+        <!-- Redirecting Audit Button to Contact Section on Home -->
+        <a href="/#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+          Audit Account
+        </a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Hero Section & Video Playback Simulator -->
   <section class="hero-section" id="hero">

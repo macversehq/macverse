@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - MACVERSE MetaAds 2026</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png">
+  
+  <script>
+    // 🧠 পেজ লোডের আগেই থিম ডিটেক্ট করে সাদা ফ্ল্যাশ রোধ করা
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light' || currentTheme === 'light-mode') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
+
+  <style>
+    /* 🎨 থিম ভ্যারিয়েবল ডিফাইন (ডিফল্ট ডার্ক মোড) */
+    :root { 
+      --bg: #080810; 
+      --card: #0f0f1e; 
+      --primary: #0052ff; 
+      --text: #ffffff; 
+      --text-sec: #8a8a9a; 
+      --border: rgba(255,255,255,0.08); 
+    }
+
+    /* ☀️ লাইট মোড ভ্যারিয়েবল */
+    :root.light-mode, body.light-mode {
+      --bg: #f4f5f6;
+      --card: #ffffff;
+      --text: #080810;
+      --text-sec: #4a4a5a;
+      --border: rgba(0,0,0,0.08);
+    }
+
+    body { background-color: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.8; margin: 0; padding: 40px 20px; transition: background 0.3s, color 0.3s; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 40px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: background 0.3s, border 0.3s; position: relative; }
+    h1 { font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(135deg, #00c6ff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h2 { font-size: 1.4rem; color: var(--text); margin-top: 30px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    p, li { color: var(--text-sec); font-size: 0.95rem; }
+    .back-btn { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 80px; font-weight: 600; font-size: 0.9rem; margin-bottom: 30px; transition: 0.3s; }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,82,255,0.4); }
+
+    /* 🌙/☀️ ফ্লোটিং থিম টগল বাটনের ডিজাইন */
+    .floating-toggle {
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      z-index: 1000;
+      width: 45px;
+      height: 45px;
+      transition: 0.3s;
+      color: var(--text);
+    }
+    .floating-toggle:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Theme Toggle Button -->
+  <button class="floating-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <span id="themeIcon">🌙</span>
+  </button>
+
+  <div class="container">
+    <a href="/" class="back-btn">← Back to Portal</a>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: July 20, 2026</p>
+    
+    <p>At MACVERSE, accessible from https://macverse-alpha.vercel.app/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by MACVERSE and how we use it.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>If you contact us directly or use our Lead Form / ROI Calculator, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</p>
+
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+      <li>Provide, operate, and maintain our website and calculated audits.</li>
+      <li>Understand and analyze how you use our website.</li>
+      <li>Develop new products, services, features, and functionality.</li>
+      <li>Communicate with you to provide strategy reviews and updates.</li>
+      <li>Send emails and process direct integrations with CRM or Google Sheets.</li>
+    </ul>
+
+    <h2>3. Log Files & Tracking Cookies</h2>
+    <p>MACVERSE follows a standard procedure of using log files. These files log visitors when they visit websites. We use Conversions API (CAPI) to track server-side behaviors to improve ad delivery efficiency in 2026's cookie-less environment.</p>
+
+    <h2>4. GDPR Data Protection Rights</h2>
+    <p>We want to make sure you are fully aware of all of your data protection rights. Every user is entitled to the right to access, rectification, erasure, and restrict processing of personal data.</p>
+  </div>
+
+  <script>
+    // 🧠 ক্লিকে থিম পরিবর্তন এবং আইকন স্টেট সিঙ্ক করা
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    // শুরুতেই সঠিক আইকন সেট করা
+    if (document.documentElement.classList.contains('light-mode')) {
+      themeIcon.textContent = '☀️';
+    } else {
+      themeIcon.textContent = '🌙';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.toggle('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      themeIcon.textContent = isLight ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

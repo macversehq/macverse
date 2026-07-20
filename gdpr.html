@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDPR Compliance - MACVERSE MetaAds 2026</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png">
+  
+  <script>
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light' || currentTheme === 'light-mode') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
+
+  <style>
+    :root { 
+      --bg: #080810; 
+      --card: #0f0f1e; 
+      --primary: #0052ff; 
+      --text: #ffffff; 
+      --text-sec: #8a8a9a; 
+      --border: rgba(255,255,255,0.08); 
+    }
+    :root.light-mode, body.light-mode {
+      --bg: #f4f5f6;
+      --card: #ffffff;
+      --text: #080810;
+      --text-sec: #4a4a5a;
+      --border: rgba(0,0,0,0.08);
+    }
+    body { background-color: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.8; margin: 0; padding: 40px 20px; transition: background 0.3s, color 0.3s; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 40px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: background 0.3s, border 0.3s; position: relative; }
+    h1 { font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(135deg, #00c6ff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h2 { font-size: 1.4rem; color: var(--text); margin-top: 30px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    p, li { color: var(--text-sec); font-size: 0.95rem; }
+    .back-btn { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 80px; font-weight: 600; font-size: 0.9rem; margin-bottom: 30px; transition: 0.3s; }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,82,255,0.4); }
+
+    .floating-toggle {
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      z-index: 1000;
+      width: 45px;
+      height: 45px;
+      transition: 0.3s;
+      color: var(--text);
+    }
+    .floating-toggle:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="floating-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <span id="themeIcon">🌙</span>
+  </button>
+
+  <div class="container">
+    <a href="/" class="back-btn">← Back to Portal</a>
+    <h1>GDPR Compliance</h1>
+    <p>Last updated: July 20, 2026</p>
+    
+    <h2>1. Data Protection Principles</h2>
+    <p>Under the General Data Protection Regulation (GDPR), we ensure that all user data we process is processed lawfully, fairly, and transparently.</p>
+
+    <h2>2. User Consent and Conversions API (CAPI)</h2>
+    <p>When you input your data into our calculator or contact forms, you consent to us processing this information for ad optimization and performance modeling. All data tracking is safely anonymized using first-party hashing standards to comply with 2026 data privacy regulations.</p>
+
+    <h2>3. Your Data Rights</h2>
+    <p>As a European Union resident, you have the right to request a copy of the data we hold, request deletion, or restrict processing of your lead information at hello.macverse@gmail.com.</p>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    if (document.documentElement.classList.contains('light-mode')) {
+      themeIcon.textContent = '☀️';
+    } else {
+      themeIcon.textContent = '🌙';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.toggle('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      themeIcon.textContent = isLight ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

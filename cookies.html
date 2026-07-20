@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Policy - MACVERSE MetaAds 2026</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/logo/menu-logo-gradient.png">
+  
+  <script>
+    // 🧠 localStorage থেকে থিম রিড করে পেজ লোডের আগেই সিঙ্ক করা
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light' || currentTheme === 'light-mode') {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
+
+  <style>
+    /* 🎨 থিম ভ্যারিয়েবল ডিফাইন (ডিফল্ট ডার্ক মোড) */
+    :root { 
+      --bg: #080810; 
+      --card: #0f0f1e; 
+      --primary: #0052ff; 
+      --text: #ffffff; 
+      --text-sec: #8a8a9a; 
+      --border: rgba(255,255,255,0.08); 
+    }
+
+    /* ☀️ লাইট মোড ভ্যারিয়েবল */
+    :root.light-mode, body.light-mode {
+      --bg: #f4f5f6;
+      --card: #ffffff;
+      --text: #080810;
+      --text-sec: #4a4a5a;
+      --border: rgba(0,0,0,0.08);
+    }
+
+    body { background-color: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.8; margin: 0; padding: 40px 20px; transition: background 0.3s, color 0.3s; }
+    .container { max-width: 800px; margin: 0 auto; background: var(--card); padding: 40px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: background 0.3s, border 0.3s; position: relative; }
+    h1 { font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(135deg, #00c6ff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h2 { font-size: 1.4rem; color: var(--text); margin-top: 30px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    p, li { color: var(--text-sec); font-size: 0.95rem; }
+    .back-btn { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 80px; font-weight: 600; font-size: 0.9rem; margin-bottom: 30px; transition: 0.3s; }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,82,255,0.4); }
+
+    /* 🌙/☀️ ফ্লোটিং থিম টগল বাটন */
+    .floating-toggle {
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      z-index: 1000;
+      width: 45px;
+      height: 45px;
+      transition: 0.3s;
+      color: var(--text);
+    }
+    .floating-toggle:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="floating-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <span id="themeIcon">🌙</span>
+  </button>
+
+  <div class="container">
+    <a href="/" class="back-btn">← Back to Portal</a>
+    <h1>Cookie Policy</h1>
+    <p>Last updated: July 20, 2026</p>
+    
+    <p>This Cookie Policy explains how MACVERSE uses cookies and similar technologies to recognize you when you visit our website. It explains what these technologies are and why we use them, as well as your rights to control our use of them.</p>
+
+    <h2>1. What Are Cookies?</h2>
+    <p>Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners in order to make their websites work, or to work more efficiently, as well as to provide reporting information.</p>
+
+    <h2>2. Why Do We Use Cookies?</h2>
+    <p>We use first-party and third-party cookies for several reasons:</p>
+    <ul>
+      <li><strong>Essential Cookies:</strong> These are strictly necessary to provide you with services available through our website (e.g., remembering your preferred <strong>Dark/Light Theme</strong> choice).</li>
+      <li><strong>Performance and Functionality Cookies:</strong> Used to enhance the performance and functionality of our website (such as our ROI Calculator data structures).</li>
+      <li><strong>Server-Side Tracking (Conversions API):</strong> We use secure, first-party hashed server tracking to measure advertising signals safely and comply with modern 2026 data practices.</li>
+    </ul>
+
+    <h2>3. How Can You Control Cookies?</h2>
+    <p>You have the right to decide whether to accept or reject cookies. You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas may be restricted.</p>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    if (document.documentElement.classList.contains('light-mode')) {
+      themeIcon.textContent = '☀️';
+    } else {
+      themeIcon.textContent = '🌙';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.toggle('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      themeIcon.textContent = isLight ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

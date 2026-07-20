@@ -4549,12 +4549,12 @@ document.getElementById('lightboxOverlay').addEventListener('touchend', (e) => {
 });
 
 // ============================================
-// কন্টাক্ট ফর্ম ভ্যালিডেশন
+// কন্টাক্ট ফর্ম ভ্যালিডেশন এবং গুগল স্ক্রিপ্ট অটোমেশন
 // ============================================
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  // হনিপট চেক
+  // হনিপট চেক (স্প্যাম প্রতিরোধ)
   const honeypot = document.getElementById('website-url').value;
   if (honeypot) return;
 
@@ -4563,6 +4563,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const name = document.getElementById('contactName');
   const email = document.getElementById('contactEmail');
   const message = document.getElementById('contactMessage');
+  const submitBtn = this.querySelector('button[type="submit"]');
 
   // নেম ভ্যালিডেশন
   if (!name.value.trim() || name.value.length < 2) {
@@ -4590,16 +4591,52 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   }
 
   if (valid) {
-    // ফর্ম সাবমিশন সিমুলেশন
-    document.getElementById('formSuccess').style.display = 'block';
-    this.reset();
+    // বাটনে লোডিং অ্যানিমেশন
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
-    // Google Forms / Google Sheets ইন্টিগ্রেশনের জন্য এখানে AJAX কল যোগ করুন
-    // fetch('YOUR_GOOGLE_FORM_URL', { method: 'POST', body: new FormData(this) });
+    // 🔗 আপনার গুগল অ্যাপস স্ক্রিপ্টের Web App URL-টি নিচে বসান
+    // (যেমন: https://script.google.com/macros/s/XXXXXX/exec)
+    const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbww63ckn17i_YjYUj3tHC5n423HfcevOy_4q_FyIAZdsVjorDZDWcYCAeC554Zs8DFDsQ/exec'; 
 
-    setTimeout(() => {
-      document.getElementById('formSuccess').style.display = 'none';
-    }, 5000);
+    if (googleScriptUrl === 'https://script.google.com/macros/s/AKfycbww63ckn17i_YjYUj3tHC5n423HfcevOy_4q_FyIAZdsVjorDZDWcYCAeC554Zs8DFDsQ/exec') {
+      // যদি এখনো ইউআরএল না বসানো থাকে (লোকাল টেস্টিং)
+      document.getElementById('formSuccess').style.display = 'block';
+      submitBtn.textContent = originalBtnText;
+      submitBtn.disabled = false;
+      this.reset();
+      
+      setTimeout(() => {
+        document.getElementById('formSuccess').style.display = 'none';
+      }, 5000);
+    } else {
+      // অটোমেটিকভাবে পুরো ফর্মের ডেটা এবং স্কোর কালেক্ট করার জন্য FormData তৈরি
+      const formData = new FormData(this);
+
+      // গুগল স্ক্রিপ্ট এপিআই কল
+      fetch(googleScriptUrl, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // 👈 গুগল স্ক্রিপ্টের CORS ব্লকিং এড়াতে এটি ১00% বাধ্যতামূলক!
+      })
+      .then(() => {
+        // সফলভাবে ডেটা সাবমিট হওয়ার পর
+        document.getElementById('formSuccess').style.display = 'block';
+        this.reset(); // ফর্ম খালি করে দেওয়া
+      })
+      .catch(error => {
+        console.error('Submission Error:', error);
+        alert('Something went wrong. Please contact via WhatsApp directly!');
+      })
+      .finally(() => {
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+        setTimeout(() => {
+          document.getElementById('formSuccess').style.display = 'none';
+        }, 5000);
+      });
+    }
   }
 });
 

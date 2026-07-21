@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/seo-images/macversehq-favicon-bk.webp" type="image/webp">
 
   <style>
     /* ============================================ */
@@ -1765,7 +1766,7 @@
     let hasShownExitPopup = false;
 
     // ============================================
-    // Simulated Autoplay Video Engine
+    // Simulated Autoplay Video Engine (Safe & Error-Free)
     // ============================================
     function startVideoSimulator() {
       videoInterval = setInterval(() => {
@@ -1777,24 +1778,37 @@
           currentSlideIdx = (currentSlideIdx + 1) % videoSlides.length;
           updateVideoSlide();
         }
-        document.getElementById('videoProgress').style.width = videoProgressPct + '%';
+        
+        const progressBar = document.getElementById('videoProgress');
+        if (progressBar) {
+          progressBar.style.width = videoProgressPct + '%';
+        }
       }, 150);
     }
 
     function updateVideoSlide() {
+      if (!videoSlides || videoSlides.length === 0) return;
       const slide = videoSlides[currentSlideIdx];
-      document.getElementById('slideHeadline').textContent = slide.headline;
-      document.getElementById('slideSub').textContent = slide.sub;
-      document.getElementById('videoCaption').textContent = slide.caption;
+
+      const headlineEl = document.getElementById('slideHeadline');
+      if (headlineEl) headlineEl.textContent = slide.headline;
+
+      const subEl = document.getElementById('slideSub');
+      if (subEl) subEl.textContent = slide.sub;
+
+      const captionEl = document.getElementById('videoCaption');
+      if (captionEl) captionEl.textContent = slide.caption;
     }
 
     function toggleVideoPlayback() {
       videoPlaying = !videoPlaying;
       const btn = document.getElementById('videoPlayPause');
-      if (videoPlaying) {
-        btn.className = 'fa-solid fa-pause play-btn';
-      } else {
-        btn.className = 'fa-solid fa-play play-btn';
+      if (btn) {
+        if (videoPlaying) {
+          btn.className = 'fa-solid fa-pause play-btn';
+        } else {
+          btn.className = 'fa-solid fa-play play-btn';
+        }
       }
     }
 
@@ -1807,7 +1821,11 @@
       
       currentSlideIdx = Math.floor((pct / 100) * videoSlides.length) % videoSlides.length;
       updateVideoSlide();
-      document.getElementById('videoProgress').style.width = pct + '%';
+
+      const progressBar = document.getElementById('videoProgress');
+      if (progressBar) {
+        progressBar.style.width = pct + '%';
+      }
     }
 
     // ============================================

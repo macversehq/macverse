@@ -301,6 +301,7 @@
       color: var(--primary);
     }
 
+    /* Byline & Freshness Note (E-E-A-T) */
     .author-byline {
       display: flex;
       align-items: center;
@@ -320,64 +321,6 @@
       justify-content: center;
       color: white;
       font-weight: bold;
-    }
-
-    /* ============================================ */
-    /* 3D Icon Marquee                              */
-    /* ============================================ */
-    .marquee-section {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 24px 0;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marqueeScroll 25s linear infinite;
-    }
-
-    .marquee-section:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 0 40px;
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
-
-    .marquee-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--card);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 1.1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .marquee-text {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    @keyframes marqueeScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
 
     /* ============================================ */
@@ -518,6 +461,64 @@
     }
 
     /* ============================================ */
+    /* 3D Icon Marquee                              */
+    /* ============================================ */
+    .marquee-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 25s linear infinite;
+    }
+
+    .marquee-section:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 40px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .marquee-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--card);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .marquee-text {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============================================ */
     /* Section Blueprints & Headings                */
     /* ============================================ */
     .section {
@@ -559,6 +560,136 @@
       color: var(--text-secondary);
       max-width: 650px;
       margin: 0 auto;
+    }
+
+    /* ============================================ */
+    /* Side-by-Side Detailed Strategy Sections     */
+    /* ============================================ */
+    .strategy-detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 80px;
+    }
+
+    .strategy-detail-row.reverse {
+      direction: rtl;
+    }
+
+    .strategy-detail-row.reverse .strategy-text-box {
+      direction: ltr;
+    }
+
+    .strategy-text-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .strategy-text-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .strategy-text-box p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .strategy-image-box {
+      width: 100%;
+      aspect-ratio: 16/10;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 15px 40px var(--shadow);
+      background: var(--card);
+      position: relative;
+      cursor: zoom-in;
+    }
+
+    .strategy-image-box::after {
+      content: '\f00e';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 184, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.8rem;
+      opacity: 0;
+      transition: var(--transition);
+      backdrop-filter: blur(2px);
+    }
+
+    .strategy-image-box:hover::after {
+      opacity: 1;
+    }
+
+    .strategy-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .strategy-image-box:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Trust & Callout Boxes (E-E-A-T) */
+    .trust-box {
+      background: rgba(255, 62, 108, 0.06);
+      border-left: 4px solid var(--danger);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      margin: 16px 0;
+    }
+
+    .trust-title {
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .callout-box {
+      background: rgba(110, 91, 255, 0.06);
+      border-left: 4px solid var(--secondary);
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      margin: 16px 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .inline-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px dashed var(--primary);
+      transition: var(--transition);
+    }
+
+    .inline-link:hover {
+      color: var(--accent);
+      border-bottom-style: solid;
     }
 
     /* ============================================ */
@@ -1178,6 +1309,38 @@
       color: white;
     }
 
+    /* Pre-formatted code blocks for dynamic schema copying */
+    pre {
+      background: #030812;
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: var(--radius-sm);
+      overflow-x: auto;
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 0.9rem;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .copy-btn:hover {
+      background: var(--primary);
+    }
+
     /* ============================================ */
     /* Exit Intent Popup (Light Minimalist design)  */
     /* ============================================ */
@@ -1491,7 +1654,7 @@
         <p class="section-subtitle">A balanced, highly-automated media buying infrastructure designed to maximize signal match rate and scaling power.</p>
       </div>
 
-      <div class="grid-3">
+      <div class="grid-3" style="margin-bottom: 80px;">
         <!-- Pillar 1 Card -->
         <div class="card" onclick="openStrategyModal('capi')">
           <div class="card-icon"><i class="fa-solid fa-plug"></i></div>
@@ -1516,6 +1679,96 @@
           <span class="card-action">Deep Dive <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </div>
+
+      <!-- ============================================ -->
+      <!-- ALTERNATING Z-LAYOUT FOR ALL 6 SECTIONS      -->
+      <!-- ============================================ -->
+
+      <!-- Section 1: The 2026 Paradigm Shift -->
+      <div class="strategy-detail-row">
+        <div class="strategy-text-box">
+          <h3>1. The 2026 Meta Ads Paradigm Shift</h3>
+          <p>The core digital advertising landscape has fundamentally broken in 2026. Browser-based cookie tracking pixels can no longer capture precise conversion metrics due to strict web browser blockers and operating system privacy protocols.</p>
+          <p>The solution is a transition from third-party client trackers to first-party server data control. Real brand scaling now relies on providing high-signal data feeds directly into Meta's AI algorithms.</p>
+          <button class="btn btn-secondary" style="align-self: flex-start; padding: 10px 24px; font-size: 0.85rem;" onclick="openStrategyModal('architecture')">Understand Paradigm Shift</button>
+        </div>
+        <div class="strategy-image-box" onclick="openImageModal(this.querySelector('img').src, '1. The 2026 Meta Ads Paradigm Shift')">
+          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/blog-images/meta-adds/meta_paradigm_shift_v2.webp" alt="2026 Meta Ads Paradigm Shift" onerror="this.src='https://via.placeholder.com/800x500/101C2E/F8FAFC?text=Paradigm+Shift+Image'">
+        </div>
+      </div>
+
+      <!-- Section 2: Conversions API (Pillar 1) -->
+      <div class="strategy-detail-row reverse">
+        <div class="strategy-text-box">
+          <h3>2. Conversions API (CAPI) Architecture</h3>
+          <p>Establish total data sovereignty. Meta Conversions API creates a secure, direct link from your web server, Shopify, or customized e-commerce engine straight to Meta's data center.</p>
+          <p>By routing signals from the server side rather than the browser side, you bypass client-side privacy extensions and guarantee that every purchase event gets logged by the algorithm.</p>
+          <p style="font-size: 0.95rem;"><em>Reference:</em> See <a href="#calculator" class="inline-link">our CAPI Gateway integration blueprint</a> to learn how server-side networks reduce signal loss.</p>
+          <button class="btn btn-secondary" style="align-self: flex-start; padding: 10px 24px; font-size: 0.85rem;" onclick="openStrategyModal('capi')">Read CAPI Tech Specs</button>
+        </div>
+        <div class="strategy-image-box" onclick="openImageModal(this.querySelector('img').src, '2. Conversions API (CAPI) Architecture')">
+          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/blog-images/meta-adds/capi_server_architecture_v2.webp" alt="Conversions API Architecture" onerror="this.src='https://via.placeholder.com/800x500/101C2E/F8FAFC?text=CAPI+Server+Architecture'">
+        </div>
+      </div>
+
+      <!-- Section 3: Event Match Quality -->
+      <div class="strategy-detail-row">
+        <div class="strategy-text-box">
+          <h3>3. Maximizing Event Match Quality (EMQ)</h3>
+          <p>Just setting up CAPI is not enough. To make Meta's bidding model highly accurate, you must pass heavily populated user parameters to secure an Event Match Quality (EMQ) score exceeding 8.0 on purchases.</p>
+          <p>Each parameter like hashed email, phone, location, and user IP address adds match points, ensuring the algorithm accurately matches server conversions to actual profiles.</p>
+          <button class="btn btn-secondary" style="align-self: flex-start; padding: 10px 24px; font-size: 0.85rem;" onclick="openStrategyModal('capi')">Optimize EMQ Scores</button>
+        </div>
+        <div class="strategy-image-box" onclick="openImageModal(this.querySelector('img').src, '3. Event Match Quality (EMQ Optimization)')">
+          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/blog-images/meta-adds/emq_dashboard.webp" alt="Event Match Quality Dashboard" onerror="this.src='https://via.placeholder.com/800x500/101C2E/F8FAFC?text=EMQ+Dashboard+Metrics'">
+        </div>
+      </div>
+
+      <!-- Section 4: Advantage+ Campaigns & The "ASC Trap" (Pillar 2) -->
+      <div class="strategy-detail-row reverse">
+        <div class="strategy-text-box">
+          <h3>4. Advantage+ Sales & The "ASC Trap"</h3>
+          <p>Meta's Advantage+ Shopping Campaign (ASC) utilizing the Andromeda retrieval system is unmatched at finding prospects with high transaction intent.</p>
+          <p>However, you must avoid the "ASC Trap" where the system wastes scaling budgets on warm, existing customers. Configure strict exclusion lists under Ad Account Settings and set a Customer Budget Cap of 5-10% maximum.</p>
+          
+          <div class="trust-box">
+            <span class="trust-title"><i class="fa-solid fa-shield-halved"></i> EEAT Trust: The Meta Automation Blindspot</span>
+            <p style="font-size: 0.95rem; margin-top: 4px;">Relying purely on Meta's default automatic settings can lead to "attribution inflation". Meta's automated reporting often claims credit for organic conversions that would have occurred anyway, hiding actual signal loss and signal mismatch.</p>
+          </div>
+          <button class="btn btn-secondary" style="align-self: flex-start; padding: 10px 24px; font-size: 0.85rem;" onclick="openStrategyModal('asc')">Configure Exclusions</button>
+        </div>
+        <div class="strategy-image-box" onclick="openImageModal(this.querySelector('img').src, '4. Advantage+ Campaigns & The ASC Trap')">
+          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/blog-images/meta-adds/asc_campaign_structure_v2.webp" alt="Advantage+ Shopping Setup" onerror="this.src='https://via.placeholder.com/800x500/101C2E/F8FAFC?text=ASC+Campaign+Dashboard'">
+        </div>
+      </div>
+
+      <!-- Section 5: Scientific 3:2:1 Testing Sandbox (Pillar 3) -->
+      <div class="strategy-detail-row">
+        <div class="strategy-text-box">
+          <h3>5. The Scientific 3:2:1 Testing Sandbox</h3>
+          <p>Creative is the targeting mechanism in 2026. Rather than dropping raw creatives directly into ASC, validate them inside a manual testing Sandbox Campaign with Dynamic Creative turned on.</p>
+          <p>Test three scroll-stopping video hooks, two body narrative styles, and one constant CTA. This structure cleanly isolates performance variables to find mathematically proven winners.</p>
+          <p style="font-size: 0.95rem;"><em>Reference:</em> Track hook and hold metrics safely using <a href="#calculator" class="inline-link">our ultimate dynamic testing spreadsheet templates</a>.</p>
+          <button class="btn btn-secondary" style="align-self: flex-start; padding: 10px 24px; font-size: 0.85rem;" onclick="openStrategyModal('testing')">Build Testing Matrix</button>
+        </div>
+        <div class="strategy-image-box" onclick="openImageModal(this.querySelector('img').src, '5. Scientific 3:2:1 Testing Sandbox')">
+          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/blog-images/meta-adds/creative_testing_matrix.webp" alt="3:2:1 Dynamic Testing Sandbox" onerror="this.src='https://via.placeholder.com/800x500/101C2E/F8FAFC?text=3:2:1+Sandbox+Matrix'">
+        </div>
+      </div>
+
+      <!-- Section 6: Post ID Graduation & Account Scale -->
+      <div class="strategy-detail-row reverse">
+        <div class="strategy-text-box">
+          <h3>6. Post ID Graduation & Budget Scale</h3>
+          <p>Once your sandbox validates an elite creative hook and body combo, locate its unique Post ID inside Page Posts manager. Graduate this exact Post ID straight to your ASC scaling campaign.</p>
+          <p>This retains all social proof—comments, reactions, and shares—keeping engagement high, lowering your CPMs, and allowing you to scale budgets 15-20% every 48 hours safely.</p>
+          <button class="btn btn-secondary" style="align-self: flex-start; padding: 10px 24px; font-size: 0.85rem;" onclick="openStrategyModal('architecture')">Learn Scaling Rules</button>
+        </div>
+        <div class="strategy-image-box" onclick="openImageModal(this.querySelector('img').src, '6. Post ID Graduation & Account Scale')">
+          <img src="https://raw.githubusercontent.com/macversehq/macverse/refs/heads/main/blog-images/meta-adds/post_id_graduation.webp" alt="Post ID Graduation Scaling" onerror="this.src='https://via.placeholder.com/800x500/101C2E/F8FAFC?text=Post+ID+Graduation+System'">
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1657,8 +1910,8 @@
         <div class="footer-socials">
           <a href="https://www.facebook.com/macversehq" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="https://www.linkedin.com/in/macverse" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
-          <!-- Twitter & WhatsApp Active Links -->
           <a href="#" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
+          <!-- Twitter & WhatsApp Active Links -->
           <a href="https://wa.me/971551244229" class="social-icon" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
@@ -1954,10 +2207,39 @@
       document.body.style.overflow = 'hidden';
     }
 
+    function openImageModal(imgSrc, imgTitle) {
+      const modal = document.getElementById('strategyModal');
+      const body = document.getElementById('modalDynamicBody');
+      body.innerHTML = `
+        <h2 style="margin-bottom: 16px; font-family: var(--font-display);">${imgTitle}</h2>
+        <div style="width: 100%; text-align: center; padding: 10px 0;">
+          <img src="${imgSrc}" style="max-width: 100%; max-height: 60vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); object-fit: contain;" alt="${imgTitle}">
+        </div>
+        <p style="text-align: center; margin-top: 16px; font-size: 0.9rem; color: var(--text-secondary);">
+          <i class="fa-solid fa-circle-info"></i> Press ESC, Click X, or click outside to return.
+        </p>
+      `;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
     function closeModal() {
       const modal = document.getElementById('strategyModal');
       modal.classList.remove('active');
       document.body.style.overflow = '';
+    }
+
+    function copyCode(btn) {
+      const pre = btn.parentElement;
+      const codeText = pre.innerText.replace("Copy Schema", "").trim();
+      navigator.clipboard.writeText(codeText).then(() => {
+        btn.innerText = "Copied!";
+        btn.style.background = "var(--success)";
+        setTimeout(() => {
+          btn.innerText = "Copy Schema";
+          btn.style.background = "rgba(255,255,255,0.1)";
+        }, 2000);
+      });
     }
 
     // ============================================
